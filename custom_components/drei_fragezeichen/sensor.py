@@ -68,6 +68,7 @@ DESCRIPTIONS: tuple[CollectionSensorDescription, ...] = (
             {
                 "title": c.episodes[max(released)]["title"],
                 "release_date": c.episodes[max(released)].get("date"),
+                "cover_url": c.episodes[max(released)].get("cover"),
             }
             if released
             else {}
@@ -96,6 +97,13 @@ class CollectionSensor(DreiFragezeichenEntity, SensorEntity):
     ) -> None:
         super().__init__(controller, description.key)
         self.entity_description = description
+
+    @property
+    def entity_picture(self) -> str | None:
+        released = self.controller.released
+        if self.entity_description.key != "latest" or not released:
+            return None
+        return self.controller.episodes[max(released)].get("cover")
 
     @property
     def native_value(self) -> int:

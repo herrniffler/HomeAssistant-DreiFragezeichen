@@ -46,9 +46,17 @@ class OwnedSwitch(DreiFragezeichenEntity, SwitchEntity):
         return self.controller.is_owned(self._number, self._fmt)
 
     @property
+    def entity_picture(self) -> str | None:
+        return self.controller.episodes[self._number].get("cover")
+
+    @property
     def extra_state_attributes(self) -> dict[str, Any]:
         episode = self.controller.episodes[self._number]
-        return {"number": self._number, "release_date": episode.get("date")}
+        return {
+            "number": self._number,
+            "release_date": episode.get("date"),
+            "cover_url": episode.get("cover"),
+        }
 
     async def async_turn_on(self, **kwargs: Any) -> None:
         self.controller.async_set_owned({self._number}, self._fmt, True)

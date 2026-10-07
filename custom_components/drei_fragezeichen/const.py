@@ -9,7 +9,7 @@ FORMATS = ("cd", "mc", "vinyl")
 FORMAT_LABELS = {"cd": "CD", "mc": "MC", "vinyl": "Vinyl"}
 
 SERIE_URL = "https://raw.githubusercontent.com/YourMJK/dreimetadaten/master/metadata/json/Serie.json"
-ATTRIBUTION = "dreimetadaten.de (CC BY 4.0)"
+ATTRIBUTION ="dreimetadaten.de (CC BY 4.0)"
 
 REFRESH_INTERVAL_HOURS = 24
 
