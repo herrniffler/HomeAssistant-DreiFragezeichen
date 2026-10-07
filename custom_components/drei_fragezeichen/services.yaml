@@ -1,0 +1,21 @@
+set_owned:
+  fields:
+    format:
+      required: true
+      example: cd
+      selector:
+        select:
+          translation_key: format
+          options:
+            - cd
+            - mc
+            - vinyl
+    episodes:
+      required: true
+      example: "1-50, 52, 60"
+      selector:
+        text:
+    owned:
+      default: true
+      selector:
+        boolean:

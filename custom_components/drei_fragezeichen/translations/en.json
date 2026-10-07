@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Die drei ???",
+        "description": "Keeps track of which main-series episodes you own on CD, MC and vinyl. The episode list comes from dreimetadaten.de (CC BY 4.0)."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "The integration is already set up."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total": {"name": "Episodes total"},
+      "owned": {"name": "Episodes owned"},
+      "missing": {"name": "Episodes missing"},
+      "owned_cd": {"name": "Episodes on CD"},
+      "owned_mc": {"name": "Episodes on MC"},
+      "owned_vinyl": {"name": "Episodes on vinyl"},
+      "latest": {"name": "Latest episode"}
+    }
+  },
+  "selector": {
+    "format": {
+      "options": {"cd": "CD", "mc": "MC", "vinyl": "Vinyl"}
+    }
+  },
+  "services": {
+    "set_owned": {
+      "name": "Set owned",
+      "description": "Marks several episodes as owned or not owned at once.",
+      "fields": {
+        "format": {"name": "Format", "description": "CD, MC or vinyl."},
+        "episodes": {
+          "name": "Episodes",
+          "description": "Episode numbers and ranges, e.g. \"1-50, 52, 60\", or \"all\"."
+        },
+        "owned": {"name": "Owned", "description": "On: owned, off: not owned."}
+      }
+    }
+  }
+}

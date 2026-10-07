@@ -1,0 +1,43 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Die drei ??? hinzufügen",
+        "description": "Verwaltet, welche Folgen der Hauptreihe du als CD, MC und Vinyl besitzt. Die Folgenliste stammt von dreimetadaten.de (CC BY 4.0)."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Die Integration ist bereits eingerichtet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "total": {"name": "Folgen gesamt"},
+      "owned": {"name": "Folgen im Besitz"},
+      "missing": {"name": "Folgen fehlend"},
+      "owned_cd": {"name": "Folgen auf CD"},
+      "owned_mc": {"name": "Folgen auf MC"},
+      "owned_vinyl": {"name": "Folgen auf Vinyl"},
+      "latest": {"name": "Neueste Folge"}
+    }
+  },
+  "selector": {
+    "format": {
+      "options": {"cd": "CD", "mc": "MC", "vinyl": "Vinyl"}
+    }
+  },
+  "services": {
+    "set_owned": {
+      "name": "Besitz setzen",
+      "description": "Markiert mehrere Folgen auf einmal als vorhanden oder nicht vorhanden.",
+      "fields": {
+        "format": {"name": "Format", "description": "CD, MC oder Vinyl."},
+        "episodes": {
+          "name": "Folgen",
+          "description": "Folgennummern und Bereiche, z. B. „1-50, 52, 60“, oder „alle“."
+        },
+        "owned": {"name": "Im Besitz", "description": "An: vorhanden, aus: nicht vorhanden."}
+      }
+    }
+  }
+}

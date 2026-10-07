@@ -1,0 +1,13 @@
+{
+  "domain": "drei_fragezeichen",
+  "name": "Die drei ???",
+  "codeowners": ["@herrniffler"],
+  "config_flow": true,
+  "documentation": "https://github.com/herrniffler/HomeAssistant-DreiFragezeichen",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/herrniffler/HomeAssistant-DreiFragezeichen/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.0"
+}
